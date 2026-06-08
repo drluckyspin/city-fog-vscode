@@ -1,13 +1,22 @@
 {
-	"publisher": "Metalloriff",
+	"publisher": "drluckyspin",
 	"name": "city-fog",
 	"displayName": "City Fog",
-	"description": "A VS code theme for the City Fog theme. (https://metalloriff.github.io/city-fog)",
+	"description": "A VS Code theme for City Fog (https://metalloriff.github.io/city-fog).",
+	"version": "1.0.0",
+	"author": {
+		"name": "Todd Papaioannou",
+		"email": "drluckyspin@gmail.com"
+	},
 	"repository": {
-		"url": "https://github.com/Metalloriff/city-fog-vscode"
+		"type": "git",
+		"url": "https://github.com/drluckyspin/city-fog-vscode"
+	},
+	"homepage": "https://github.com/drluckyspin/city-fog-vscode#readme",
+	"bugs": {
+		"url": "https://github.com/drluckyspin/city-fog-vscode/issues"
 	},
 	"icon": "logo512.png",
-	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.60.0"
 	},

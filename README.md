@@ -13,6 +13,42 @@ City Fog has low syntax highlighting. This is intended for those who don't like 
 
 ---
 
+## Install
+
+### VS Code Marketplace
+
+The easiest way to install is from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Metalloriff.city-fog).
+
+### From a clone
+
+**Install the bundled VSIX** (no build step):
+
+1. Clone this repo.
+2. In VS Code, open the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
+3. Open the `...` menu → **Install from VSIX...**
+4. Select `city-fog-0.0.3.vsix` in the repo root.
+
+Or from a terminal:
+
+```bash
+code --install-extension city-fog-0.0.3.vsix
+```
+
+**Build and install locally** (if you changed the theme or version):
+
+1. Install [Node.js](https://nodejs.org/) (LTS is fine).
+2. Install the packaging tool: `npm install -g @vscode/vsce`
+3. From the repo root: `vsce package`
+4. Install the generated `.vsix` (same steps as above, using the new filename).
+
+After installing, pick **City Fog** under **File → Preferences → Theme → Color Theme** (`Cmd+K Cmd+T` / `Ctrl+K Ctrl+T`).
+
+### Development
+
+To preview changes without packaging, open this folder in VS Code and press **F5** to launch an Extension Development Host with the theme loaded.
+
+---
+
 ## 📷 Screenshots
 
 ![Main](https://i.imgur.com/1pNlq45.jpg)
@@ -35,6 +71,25 @@ City Fog should support most/all languages, if you are experiencing issues with 
 > This is my first VS Code theme and/or extension
 
 It's bound to have issues; if you find any of these and wish to resolve them, I will gladly accept PRs, or, you may create an issue on the repo and I will respond when I see it.
+
+### Build and release a VSIX
+
+There is no compile step — the extension is the theme JSON plus `package.json` assets. Packaging is done with [`vsce`](https://github.com/microsoft/vscode-vsce):
+
+```bash
+npm install -g @vscode/vsce   # once
+vsce package                  # creates city-fog-<version>.vsix
+```
+
+Before releasing, bump `version` in `package.json`, run `vsce package`, install the VSIX locally to verify, then commit the updated `package.json` and `.vsix`.
+
+**Publish to the Marketplace**
+
+1. Create a [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) for the `Metalloriff` publisher (Azure DevOps, **Marketplace → Manage** scope).
+2. Log in once: `vsce login Metalloriff` (paste the PAT when prompted).
+3. Publish: `vsce publish` (reads version from `package.json`).
+
+Alternatively, attach the `.vsix` to a [GitHub release](https://github.com/Metalloriff/city-fog-vscode/releases) for manual installs.
 
 ## 🌆 Light Theme
 
