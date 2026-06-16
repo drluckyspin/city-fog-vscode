@@ -17,7 +17,7 @@ City Fog has low syntax highlighting. This is intended for those who don't like 
 
 ### VS Code Marketplace
 
-The easiest way to install is from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Metalloriff.city-fog).
+The easiest way to install is from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=drluckyspin.city-fog).
 
 ### From a clone
 
@@ -26,12 +26,12 @@ The easiest way to install is from the [VS Code Marketplace](https://marketplace
 1. Clone this repo.
 2. In VS Code, open the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
 3. Open the `...` menu → **Install from VSIX...**
-4. Select `city-fog-0.0.3.vsix` in the repo root.
+4. Select `city-fog-1.0.0.vsix` in the repo root.
 
 Or from a terminal:
 
 ```bash
-code --install-extension city-fog-0.0.3.vsix
+code --install-extension city-fog-1.0.0.vsix
 ```
 
 **Build and install locally** (if you changed the theme or version):
@@ -85,11 +85,11 @@ Before releasing, bump `version` in `package.json`, run `vsce package`, install 
 
 **Publish to the Marketplace**
 
-1. Create a [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) for the `Metalloriff` publisher (Azure DevOps, **Marketplace → Manage** scope).
-2. Log in once: `vsce login Metalloriff` (paste the PAT when prompted).
+1. Create a [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) for the `drluckyspin` publisher (Azure DevOps, **Marketplace → Manage** scope).
+2. Log in once: `vsce login drluckyspin` (paste the PAT when prompted).
 3. Publish: `vsce publish` (reads version from `package.json`).
 
-Alternatively, attach the `.vsix` to a [GitHub release](https://github.com/Metalloriff/city-fog-vscode/releases) for manual installs.
+Alternatively, attach the `.vsix` to a [GitHub release](https://github.com/drluckyspin/city-fog-vscode/releases) for manual installs.
 
 ## 🌆 Light Theme
 
