@@ -1,0 +1,35 @@
+{
+	"publisher": "drluckyspin",
+	"name": "city-fog-dawn",
+	"displayName": "City Fog Dawn",
+	"description": "Light variant of City Fog for VS Code; maintained successor to Metalloriff's original Dawn theme.",
+	"version": "1.0.0",
+	"author": {
+		"name": "Todd Papaioannou",
+		"email": "drluckyspin@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/drluckyspin/city-fog-vscode"
+	},
+	"homepage": "https://github.com/drluckyspin/city-fog-vscode#readme",
+	"bugs": {
+		"url": "https://github.com/drluckyspin/city-fog-vscode/issues"
+	},
+	"icon": "logo512.png",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "City Fog Dawn",
+				"uiTheme": "vs",
+				"path": "./themes/City Fog Dawn-color-theme.json"
+			}
+		]
+	}
+}
