@@ -1,106 +1,127 @@
-# 市 霧 City Fog VS Code
+# City Fog
 
-![Banner](Banner.png)
+![Banner](packages/city-fog/Banner.png)
 
-A VS Code theme for [City Fog](https://metalloriff.github.io/city-fog).
+VS Code color themes for [City Fog](https://metalloriff.github.io/city-fog) — a low-saturation, mid-contrast palette
+with a cold, cyberpunk feel and restrained syntax highlighting.
 
----
+These extensions are **maintained successors** under the `drluckyspin` publisher at version **1.0.0**. They are not
+transfers of the original Metalloriff Marketplace listings; install the links below for the maintained releases.
 
-City Fog is a low saturation, mid contrast, mid brightness, cyberpunk-esque theme;
-designed to give a cold but lively feel.
+## What is City Fog?
 
-City Fog has low syntax highlighting. This is intended for those who don't like overly-highlighted syntax.
+City Fog is designed to stay calm without going flat: muted blues and greys, a pink accent, and enough contrast for long
+editing sessions. Syntax highlighting is intentionally light — useful if you prefer the editor chrome and your own
+reading rhythm over rainbow token colors.
 
----
+This repository ships two extensions:
+
+| Extension             | Marketplace ID              | Theme picker label | Package                                            |
+| --------------------- | --------------------------- | ------------------ | -------------------------------------------------- |
+| City Fog (dark)       | `drluckyspin.city-fog`      | City Fog           | [`packages/city-fog`](packages/city-fog)           |
+| City Fog Dawn (light) | `drluckyspin.city-fog-dawn` | City Fog Dawn      | [`packages/city-fog-dawn`](packages/city-fog-dawn) |
+
+Original extensions by Metalloriff (unmaintained here):
+
+| Extension             | Marketplace ID                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| City Fog (dark)       | [`metalloriff.city-fog`](https://marketplace.visualstudio.com/items?itemName=metalloriff.city-fog)           |
+| City Fog Dawn (light) | [`metalloriff.city-fog-dawn`](https://marketplace.visualstudio.com/items?itemName=metalloriff.city-fog-dawn) |
 
 ## Install
 
 ### VS Code Marketplace
 
-The easiest way to install is from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=drluckyspin.city-fog).
+- **City Fog (dark):** [drluckyspin.city-fog](https://marketplace.visualstudio.com/items?itemName=drluckyspin.city-fog)
+- **City Fog Dawn (light):**
+  [drluckyspin.city-fog-dawn](https://marketplace.visualstudio.com/items?itemName=drluckyspin.city-fog-dawn)
+
+After installing, choose the theme under **File → Preferences → Theme → Color Theme** (`Cmd+K Cmd+T` / `Ctrl+K Ctrl+T`).
 
 ### From a clone
 
-**Install the bundled VSIX** (no build step):
-
-1. Clone this repo.
-2. In VS Code, open the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
-3. Open the `...` menu → **Install from VSIX...**
-4. Select `city-fog-*.vsix` in the repo root.
-
-Or from a terminal:
-
-```bash
-code --install-extension city-fog-1.0.0.vsix
-```
-
-**Build and install locally** (if you changed the theme or version):
-
-1. Install [Node.js](https://nodejs.org/) (LTS is fine).
-2. Install the packaging tool: `npm install -g @vscode/vsce`
-3. From the repo root: `vsce package`
-4. Install the generated `.vsix` (same steps as above, using the new filename).
-
-After installing, pick **City Fog** under **File → Preferences → Theme → Color Theme** (`Cmd+K Cmd+T` / `Ctrl+K Ctrl+T`).
-
-### Development
-
-To preview changes without packaging, open this folder in VS Code and press **F5** to launch an Extension Development Host with the theme loaded.
-
----
-
-## 📷 Screenshots
-
-![Main](https://i.imgur.com/1pNlq45.jpg)
-
-![Console](https://i.imgur.com/sKiCKOB.jpg)
-
-![Menus](https://i.imgur.com/DtfRymA.png)
-
-![Site Hero](https://i.imgur.com/FCVzNeB.png)
-
-![Site Accents](https://i.imgur.com/hGQmheX.png)
-
-## 👩‍💻 Language Support
-
-City Fog should support most/all languages, if you are experiencing issues with a specific language, please [contact me](mailto:metalloriff@gmail.com), or create a PR, and I will look into it. 😄
-
-## 🌏 Contributing
-
-> [!NOTE]
-> This is my first VS Code theme and/or extension
-
-It's bound to have issues; if you find any of these and wish to resolve them, I will gladly accept PRs, or, you may create an issue on the repo and I will respond when I see it.
-
-### Build and release a VSIX
-
-There is no compile step — the extension is the theme JSON plus `package.json` assets. Packaging is done with [`vsce`](https://github.com/microsoft/vscode-vsce):
+**Build VSIX files** (requires [Node.js](https://nodejs.org/) and [`vsce`](https://github.com/microsoft/vscode-vsce)):
 
 ```bash
 npm install -g @vscode/vsce   # once
-vsce package                  # creates city-fog-<version>.vsix
+./scripts/package.sh          # writes dist/city-fog-*.vsix and dist/city-fog-dawn-*.vsix
 ```
 
-Before releasing, bump `version` in `package.json`, run `vsce package`, install the VSIX locally to verify, then commit the updated `package.json` and `.vsix`.
+Install from the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`) → `...` → **Install from VSIX...**, or:
 
-**Publish to the Marketplace**
+```bash
+code --install-extension dist/city-fog-1.0.0.vsix
+code --install-extension dist/city-fog-dawn-1.0.0.vsix
+```
 
-1. Create a [Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher) for the `drluckyspin` publisher (Azure DevOps, **Marketplace → Manage** scope).
-2. Log in once: `vsce login drluckyspin` (paste the PAT when prompted).
-3. Publish: `vsce publish` (reads version from `package.json`).
+### Development
 
-Alternatively, attach the `.vsix` to a [GitHub release](https://github.com/drluckyspin/city-fog-vscode/releases) for manual installs.
+Open this repository root in VS Code. Use **Run and Debug** (`F5`) and pick **City Fog (dark)** or **City Fog Dawn
+(light)**.
 
-## 🌆 Light Theme
+## Screenshots
 
-City Fog also has a light theme. For those interested, you can [get it here](https://marketplace.visualstudio.com/items?itemName=metalloriff.city-fog-dawn).
+### City Fog (dark)
 
-## 🎨 My Other Works
+![Editor](https://i.imgur.com/1pNlq45.jpg)
 
-If you would like to check out my other works, you can view all of my public personal projects at [kinzoku.one](https://kinzoku.one).
+![Terminal](https://i.imgur.com/sKiCKOB.jpg)
 
-## ☕ Donate
+![Menus](https://i.imgur.com/DtfRymA.png)
 
-If you would like to donate, anything is appreciated.
+![Site hero](https://i.imgur.com/FCVzNeB.png)
 
-You can do so at my [PayPal.me](https://paypal.me/israelboone) ♥
+![Site accents](https://i.imgur.com/hGQmheX.png)
+
+### City Fog Dawn (light)
+
+![Editor](https://i.imgur.com/VEbzqRR.png)
+
+![Terminal](https://i.imgur.com/Ib9JjKI.png)
+
+![Menus](https://i.imgur.com/Njaoak6.png)
+
+## Language support
+
+Both themes target generic TextMate scopes and should work across most languages. If something looks wrong for a
+specific language, [open an issue](https://github.com/drluckyspin/city-fog-vscode/issues) or send a pull request.
+
+## Build and release
+
+There is no compile step — each extension is theme JSON plus packaged assets.
+
+```bash
+./scripts/package.sh
+```
+
+Before releasing, bump `version` in the relevant `packages/*/package.json`, run `./scripts/package.sh`, install the VSIX
+files locally to verify, then publish from each package directory:
+
+```bash
+cd packages/city-fog && vsce publish
+cd packages/city-fog-dawn && vsce publish
+```
+
+Publishing requires a
+[Personal Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher)
+for the `drluckyspin` publisher and `vsce login drluckyspin`.
+
+## Contributing
+
+Issues and pull requests are welcome.
+
+## Thanks to
+
+- [Metalloriff](https://github.com/Metalloriff) (Israel Boone) for creating the original City Fog VS Code themes and
+  encouraging continued maintenance of the project
+- The [City Fog](https://metalloriff.github.io/city-fog) palette and design these themes implement
+
+## License
+
+MIT — see [LICENSE.txt](LICENSE.txt).
+
+<!-- markdownlint-disable MD013 MD033 -->
+<p align="center">
+  <a href="LICENSE.txt"><img alt="License: MIT" src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>
+<!-- markdownlint-enable MD013 MD033 -->
