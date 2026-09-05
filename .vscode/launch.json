@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "City Fog (dark)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/city-fog"],
+      "outFiles": ["${workspaceFolder}/packages/city-fog/**/*.js"]
+    },
+    {
+      "name": "City Fog Dawn (light)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/packages/city-fog-dawn"],
+      "outFiles": ["${workspaceFolder}/packages/city-fog-dawn/**/*.js"]
+    }
+  ]
+}
