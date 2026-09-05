@@ -26,7 +26,7 @@ The easiest way to install is from the [VS Code Marketplace](https://marketplace
 1. Clone this repo.
 2. In VS Code, open the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
 3. Open the `...` menu → **Install from VSIX...**
-4. Select `city-fog-1.0.0.vsix` in the repo root.
+4. Select `city-fog-*.vsix` in the repo root.
 
 Or from a terminal:
 
